@@ -26,7 +26,10 @@
   <!-- DNS Prefetch para domínios externos (fontes agora são locais, removido prefetch do Google Fonts) -->
   <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
-  <link rel="dns-prefetch" href="https://fast.wistia.com">
+
+  <!-- Preconnect Wistia: deixa a conexão pronta antes do vídeo carregar -->
+  <link rel="preconnect" href="https://fast.wistia.com">
+  <link rel="preconnect" href="https://fast.wistia.net" crossorigin>
 
   <!-- Preload das fontes locais (carregam imediatamente, sem dependência externa) -->
   <link rel="preload" href="fonts/Bangers-Regular.woff" as="font" type="font/woff" crossorigin>
@@ -787,7 +790,7 @@
               container.appendChild(wp);
               observer.disconnect();
             }
-          }, { threshold: 0.1 });
+          }, { rootMargin: '800px 0px 800px 0px' });
           observer.observe(document.getElementById('vsl-placeholder'));
         })();
       </script>
