@@ -23,19 +23,14 @@
   <meta name="description" content="Monte os Mascotes oficiais da Copa 2026 (Maple, Clutch e Zaya) em Papercraft 3D. Apenas tesoura e cola. Download imediato por R$ 29,90.">
   <title>Mascotes da Copa 2026 - Papercraft 3D</title>
 
-  <!-- DNS Prefetch para domínios externos -->
-  <link rel="dns-prefetch" href="https://fonts.googleapis.com">
-  <link rel="dns-prefetch" href="https://fonts.gstatic.com">
+  <!-- DNS Prefetch para domínios externos (fontes agora são locais, removido prefetch do Google Fonts) -->
   <link rel="dns-prefetch" href="https://cdn.utmify.com.br">
   <link rel="dns-prefetch" href="https://www.clarity.ms">
   <link rel="dns-prefetch" href="https://fast.wistia.com">
 
-  <!-- Preconnect para fontes -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-
-  <!-- Fontes carregadas direto para evitar troca de fonte (FOUT) -->
-  <link href="https://fonts.googleapis.com/css2?family=Bangers&family=Nunito:wght@400;700;900&display=block" rel="stylesheet">
+  <!-- Preload das fontes locais (carregam imediatamente, sem dependência externa) -->
+  <link rel="preload" href="fonts/Bangers-Regular.woff" as="font" type="font/woff" crossorigin>
+  <link rel="preload" href="fonts/Nunito-Black.woff" as="font" type="font/woff" crossorigin>
 
   <!-- Microsoft Clarity adiado para não bloquear LCP -->
   <script>
@@ -48,6 +43,35 @@
     });
   </script>
   <style>
+    /* FONTES LOCAIS - carregam do próprio servidor, sem dependência do Google Fonts */
+    @font-face {
+        font-family: 'Bangers';
+        src: url('fonts/Bangers-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/NunitoSans-Regular.woff') format('woff');
+        font-weight: 400;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/Nunito-Bold.woff') format('woff');
+        font-weight: 700;
+        font-style: normal;
+        font-display: block;
+    }
+    @font-face {
+        font-family: 'Nunito';
+        src: url('fonts/Nunito-Black.woff') format('woff');
+        font-weight: 900;
+        font-style: normal;
+        font-display: block;
+    }
     /* GLOBAL */
     :root {
         --primary: #F0CF80;
@@ -123,7 +147,7 @@
     .br-mobile-only { display: none; }
     .hero-subheadline {
         font-size: 1.4rem;
-        font-weight: 800;
+        font-weight: 900;
         margin-bottom: 19px;
         color: rgba(255, 255, 255, 0.8);
         max-width: 700px;
@@ -658,7 +682,7 @@
         .hero-headline { font-size: 2.5rem; margin-bottom: 9px; }
         .br-mobile-only { display: inline; }
         .br-desktop-only { display: none; }
-        .hero-subheadline { margin-bottom: 14px; font-size: 1.15rem; font-weight: 800; }
+        .hero-subheadline { margin-bottom: 14px; font-size: 1.15rem; font-weight: 900; }
         .carousel-wrapper { margin: 10px 0 15px 0; padding: 0; }
         .carousel-item { width: 280px; height: 330px; margin: 0 8px; }
         .price-new { font-size: 4rem; }
